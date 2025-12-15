@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { CountrySelector } from './components/CountrySelector';
 import { ContactForm } from './components/ContactForm';
 import { AvailabilityCheck } from './components/AvailabilityCheck';
 import { ProfileSelector } from './components/ProfileSelector';
 import { Summary } from './components/Summary';
+import { LoginScreen } from './components/LoginScreen'; // Import Login
 import { ContactInfo, TechAvailability, Language } from './types';
 
 function App() {
+  // Authentication State
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isAuthChecking, setIsAuthChecking] = useState(true);
+
   const [step, setStep] = useState(0);
   
   // State for Language
@@ -35,6 +40,20 @@ function App() {
   // State for Step 3 (Profile)
   const [selectedProfileId, setSelectedProfileId] = useState<string | null>(null);
 
+  // Check for existing session on mount
+  useEffect(() => {
+    const sessionAuth = sessionStorage.getItem('heytens_auth');
+    if (sessionAuth === 'true') {
+      setIsAuthenticated(true);
+    }
+    setIsAuthChecking(false);
+  }, []);
+
+  const handleLogin = () => {
+    sessionStorage.setItem('heytens_auth', 'true');
+    setIsAuthenticated(true);
+  };
+
   const nextStep = () => setStep(s => s + 1);
   const prevStep = () => setStep(s => s - 1);
 
@@ -57,6 +76,14 @@ function App() {
     // But we advance to the next step
     nextStep();
   };
+
+  // Prevent flash while checking session
+  if (isAuthChecking) return null;
+
+  // Show Login Screen if not authenticated
+  if (!isAuthenticated) {
+    return <LoginScreen onLogin={handleLogin} />;
+  }
 
   return (
     <Layout currentStep={step} language={language}>

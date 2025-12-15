@@ -36,7 +36,7 @@ export const TRANSLATIONS: Record<Language, any> = {
     details_offer: 'Détails de l\'offre (Connectivité)',
     details_contact: 'Coordonnées',
     print: 'Imprimer',
-    send: 'Envoyer la demande',
+    send: 'Valider et Envoyer',
     price_on_request: 'Prix communiqué ultérieurement',
     month: '/mois',
     fiber_avail: 'Fibre Disponible',
@@ -61,11 +61,11 @@ export const TRANSLATIONS: Record<Language, any> = {
     or_text: 'OU',
     other_offers_desc: 'Sélectionnez cette option pour les demandes spécifiques (HQ, DC, Mobile Only)',
     // Form Submission
-    sending: 'Envoi en cours...',
-    success_title: 'Demande envoyée !',
-    success_desc: 'Votre demande a été transmise à l\'équipe IT. Une copie email a été générée pour vos archives.',
+    sending: 'Enregistrement...',
+    success_title: 'Demande enregistrée !',
+    success_desc: 'Votre demande a été archivée dans le système et votre client mail va s\'ouvrir pour envoyer la copie officielle.',
     error_title: 'Erreur',
-    error_desc: 'Une erreur est survenue. Veuillez réessayer ou contacter le support.',
+    error_desc: 'Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.',
     // Profile Names Translations
     profiles: {
       dual_copper: 'DUAL copper',
@@ -116,7 +116,7 @@ export const TRANSLATIONS: Record<Language, any> = {
     details_offer: 'Offertedetails (Connectiviteit)',
     details_contact: 'Contactgegevens',
     print: 'Afdrukken',
-    send: 'Aanvraag verzenden',
+    send: 'Valideren en Verzenden',
     price_on_request: 'Prijs later meegedeeld',
     month: '/maand',
     fiber_avail: 'Glasvezel Beschikbaar',
@@ -141,9 +141,9 @@ export const TRANSLATIONS: Record<Language, any> = {
     or_text: 'OF',
     other_offers_desc: 'Selecteer deze optie voor specifieke verzoeken (HQ, DC, Mobile Only)',
     // Form Submission
-    sending: 'Verzenden...',
-    success_title: 'Aanvraag verzonden!',
-    success_desc: 'Uw aanvraag is verstuurd naar het IT-team.',
+    sending: 'Registreren...',
+    success_title: 'Aanvraag geregistreerd!',
+    success_desc: 'Uw aanvraag is gearchiveerd en uw e-mailclient wordt geopend voor de officiële kopie.',
     error_title: 'Fout',
     error_desc: 'Er is een fout opgetreden. Probeer het opnieuw.',
     // Profile Names Translations
@@ -196,7 +196,7 @@ export const TRANSLATIONS: Record<Language, any> = {
     details_offer: 'Offer Details (Connectivity)',
     details_contact: 'Contact Details',
     print: 'Print',
-    send: 'Send Request',
+    send: 'Validate and Send',
     price_on_request: 'Price communicated later',
     month: '/month',
     fiber_avail: 'Fiber Available',
@@ -221,9 +221,9 @@ export const TRANSLATIONS: Record<Language, any> = {
     or_text: 'OR',
     other_offers_desc: 'Select this option for specific requests (HQ, DC, Mobile Only)',
     // Form Submission
-    sending: 'Sending...',
-    success_title: 'Request Sent!',
-    success_desc: 'Your request has been forwarded to the IT team.',
+    sending: 'Registering...',
+    success_title: 'Request Registered!',
+    success_desc: 'Your request has been archived and your email client will open for the official copy.',
     error_title: 'Error',
     error_desc: 'An error occurred. Please try again.',
     // Profile Names Translations
