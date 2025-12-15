@@ -50,7 +50,11 @@
     <script type="module" src="/index.tsx"></script>
     
     <!-- Netlify Form Skeleton (Hidden) -->
-    <form name="sdwan-request" netlify netlify-honeypot="bot-field" hidden>
+    <!-- Modification: data-netlify="true" et ajout du champ bot-field pour une détection parfaite -->
+    <form name="sdwan-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="sdwan-request" />
+      <input type="hidden" name="bot-field" />
+      
       <input type="text" name="companyName" />
       <input type="text" name="proximusId" />
       <input type="text" name="vatNumber" />
