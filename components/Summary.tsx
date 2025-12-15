@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ContactInfo, TechAvailability, Language } from '../types';
 import { DB, HIDDEN_ITEM_TYPES } from '../constants';
-import { Mail, Printer, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Mail, Printer, CheckCircle, AlertCircle, Loader2, RefreshCcw } from 'lucide-react';
 import { TRANSLATIONS } from '../translations';
 
 interface SummaryProps {
@@ -9,6 +9,7 @@ interface SummaryProps {
   profileId: string | null;
   availability: TechAvailability;
   onBack: () => void;
+  onReset: () => void;
   country: string;
   language: Language;
 }
@@ -20,7 +21,7 @@ const encode = (data: any) => {
     .join("&");
 }
 
-export const Summary: React.FC<SummaryProps> = ({ contact, profileId, availability, onBack, country, language }) => {
+export const Summary: React.FC<SummaryProps> = ({ contact, profileId, availability, onBack, onReset, country, language }) => {
   const t = TRANSLATIONS[language];
   const profile = DB.profiles.find(p => p.profile_id === profileId);
   const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -129,12 +130,22 @@ Merci de procéder à la validation et à l'encodage.
             </div>
             <h2 className="text-2xl font-bold text-green-800 mb-2">{t.success_title}</h2>
             <p className="text-green-700 mb-6">{t.success_desc}</p>
-            <button 
-                onClick={() => window.print()}
-                className="px-6 py-2 bg-white border border-green-300 text-green-700 rounded hover:bg-green-50"
-            >
-                {t.print}
-            </button>
+            <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+                <button 
+                    onClick={() => window.print()}
+                    className="px-6 py-2 bg-white border border-green-300 text-green-700 rounded hover:bg-green-50 flex items-center justify-center"
+                >
+                    <Printer className="w-4 h-4 mr-2" />
+                    {t.print}
+                </button>
+                <button 
+                    onClick={onReset}
+                    className="px-6 py-2 heytens-black text-white rounded hover:bg-gray-800 flex items-center justify-center"
+                >
+                    <RefreshCcw className="w-4 h-4 mr-2" />
+                    {t.new_request}
+                </button>
+            </div>
         </div>
       );
   }

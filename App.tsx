@@ -8,6 +8,17 @@ import { Summary } from './components/Summary';
 import { LoginScreen } from './components/LoginScreen'; // Import Login
 import { ContactInfo, TechAvailability, Language } from './types';
 
+const INITIAL_CONTACT_DATA: ContactInfo = {
+  companyName: '',
+  proximusId: '',
+  vatNumber: '',
+  adminContact: '',
+  techContact: '',
+  mobile: '',
+  email: '',
+  siteAddress: ''
+};
+
 function App() {
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -22,16 +33,7 @@ function App() {
   const [country, setCountry] = useState<string>('');
 
   // State for Step 1 (Contact)
-  const [contactData, setContactData] = useState<ContactInfo>({
-    companyName: '',
-    proximusId: '',
-    vatNumber: '',
-    adminContact: '',
-    techContact: '',
-    mobile: '',
-    email: '',
-    siteAddress: ''
-  });
+  const [contactData, setContactData] = useState<ContactInfo>(INITIAL_CONTACT_DATA);
 
   // State for Step 2 (Availability)
   const [availability, setAvailability] = useState<TechAvailability>(TechAvailability.UNKNOWN);
@@ -75,6 +77,15 @@ function App() {
     // Logic: If choosing special profiles, we might treat availability as unknown or irrelevant for display
     // But we advance to the next step
     nextStep();
+  };
+
+  const handleReset = () => {
+    setStep(0);
+    setCountry('');
+    setContactData(INITIAL_CONTACT_DATA);
+    setAvailability(TechAvailability.UNKNOWN);
+    setIsSpecialProfileMode(false);
+    setSelectedProfileId(null);
   };
 
   // Prevent flash while checking session
@@ -136,6 +147,7 @@ function App() {
           profileId={selectedProfileId}
           availability={availability}
           onBack={prevStep}
+          onReset={handleReset}
           country={country}
           language={language}
         />

@@ -66,6 +66,7 @@ export const TRANSLATIONS: Record<Language, any> = {
     success_desc: 'Votre demande a été archivée dans le système et votre client mail va s\'ouvrir pour envoyer la copie officielle.',
     error_title: 'Erreur',
     error_desc: 'Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.',
+    new_request: 'Nouvelle demande',
     // Profile Names Translations
     profiles: {
       dual_copper: 'DUAL copper',
@@ -146,6 +147,7 @@ export const TRANSLATIONS: Record<Language, any> = {
     success_desc: 'Uw aanvraag is gearchiveerd en uw e-mailclient wordt geopend voor de officiële kopie.',
     error_title: 'Fout',
     error_desc: 'Er is een fout opgetreden. Probeer het opnieuw.',
+    new_request: 'Nieuwe aanvraag',
     // Profile Names Translations
     profiles: {
       dual_copper: 'DUAL copper',
@@ -226,6 +228,7 @@ export const TRANSLATIONS: Record<Language, any> = {
     success_desc: 'Your request has been archived and your email client will open for the official copy.',
     error_title: 'Error',
     error_desc: 'An error occurred. Please try again.',
+    new_request: 'New Request',
     // Profile Names Translations
     profiles: {
       dual_copper: 'DUAL copper',
