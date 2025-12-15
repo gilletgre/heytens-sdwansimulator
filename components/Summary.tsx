@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContactInfo, Profile, TechAvailability, Language } from '../types';
+import { ContactInfo, TechAvailability, Language } from '../types';
 import { DB, HIDDEN_ITEM_TYPES } from '../constants';
 import { Mail, Printer, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { TRANSLATIONS } from '../translations';
