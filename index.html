@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heytens SD-WAN Configurator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .heytens-black { background-color: #000000; }
+      .heytens-accent { color: #C4A484; } /* Soft beige/gold accent often seen in interior design */
+
+      /* Custom Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 20px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      
+      .shadow-3xl {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+    
+    <!-- Netlify Form Skeleton (Hidden) for future enablement -->
+    <form name="sdwan-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="companyName" />
+      <input type="text" name="proximusId" />
+      <input type="text" name="vatNumber" />
+      <input type="text" name="adminContact" />
+      <input type="email" name="email" />
+      <input type="text" name="mobile" />
+      <input type="text" name="techContact" />
+      <input type="text" name="siteAddress" />
+      <input type="text" name="country" />
+      <input type="text" name="selectedProfile" />
+      <input type="text" name="availability" />
+    </form>
+  </body>
+</html>
