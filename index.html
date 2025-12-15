@@ -9,7 +9,7 @@
     <style>
       body { font-family: 'Inter', sans-serif; }
       .heytens-black { background-color: #000000; }
-      .heytens-accent { color: #C4A484; } /* Soft beige/gold accent often seen in interior design */
+      .heytens-accent { color: #C4A484; }
 
       /* Custom Animations */
       @keyframes fadeInUp {
@@ -34,18 +34,22 @@
   <script type="importmap">
 {
   "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body class="bg-gray-50 text-gray-900">
     <div id="root"></div>
+    <!-- Point d'entrée pour Vite -->
+    <script type="module" src="/index.tsx"></script>
     
-    <!-- Netlify Form Skeleton (Hidden) for future enablement -->
+    <!-- Netlify Form Skeleton (Hidden) -->
     <form name="sdwan-request" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="companyName" />
       <input type="text" name="proximusId" />
@@ -58,6 +62,8 @@
       <input type="text" name="country" />
       <input type="text" name="selectedProfile" />
       <input type="text" name="availability" />
+      <input type="text" name="monthlyPrice" />
+      <input type="text" name="oneTimePrice" />
     </form>
   </body>
 </html>
